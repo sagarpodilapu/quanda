@@ -1,0 +1,38 @@
+<div class="jumbotron">
+  <h1 class="display-3">Quanda</h1>
+  <p class="lead">Question and Answers. Simplified.</p>
+  <hr class="my-4">
+  <p>Ask any question and get the best-short-simplified answer</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#questionModal">Ask a Question</a>
+  </p>
+</div>
+<div class="'container">
+  <div class="'row">
+    <div class="boxes">
+      <ul class="list-unstyled">
+        <% @questions.each do |q| %>
+            <li class="media">
+              <img class="d-flex mr-3" src="<%= q.gravatar %>" alt="Generic placeholder image">
+              <div class="media-body">
+                <h5 class="mt-0 mb-1"><%= q.email %> asked</h5>
+                <div class="question-age"><%= time_ago_in_words q.created_at %> ago</div>
+                <div><%= q.body %></div>
+                <div>
+                  <a class="btn btn-success btn-sm" href="<%= question_path(q) %>" role="button">View Answers</a>
+                </div>
+              </div>
+            </li>
+        <% end %>
+
+        <% if @questions.empty? %>
+            <li>
+              <div class="alert alert-info" role="alert">
+                Nothing to show here. Add a question
+              </div>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="jumbotron">
+  <div class="'container">
+    <ul class="list-unstyled">
+      <li class="media">
+        <img class="d-flex mr-3" src="<%= @question.gravatar %>" alt="Generic placeholder image">
+        <div class="media-body">
+          <h5 class="mt-0 mb-1"><%= @question.email %> asked</h5>
+          <%= @question.body %>
+          <div class="answer-btn">
+            <a class="btn btn-success btn-sm" href="#" role="button" data-toggle="modal" data-target="#answerModal">Add an Answer</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="'container">
+
+</div>
+<hr/>
+<div class="'container">
+  <div class="'row">
+    <div class="boxes">
+      <% @answers.each do |a| %>
+          <div class="media my-4">
+            <img class="d-flex mr-3" src="<%= a.gravatar %>" alt="Generic placeholder image">
+            <div class="media-body">
+              <h5 class="mt-0 mb-1"><%= a.email %> answered</h5>
+              <div class="question-age"><%= time_ago_in_words a.created_at %> ago</div>
+              <div><%= a.body %></div>
+            </div>
+          </div>
+      <% end %>
+
+      <% if @answers.empty? %>
+          <div>
+            <div class="alert alert-info" role="alert">
+              Nothing to show here. Add an answer
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render "home/new_answer_form" %>

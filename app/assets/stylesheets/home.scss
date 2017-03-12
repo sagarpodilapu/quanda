@@ -1,0 +1,46 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.boxes {
+  .media {
+    margin: 1em;
+    border: thin solid #eee;
+    padding: 1em;
+    background: #f8f8f8;
+    border-radius: 10px;
+    .question-age {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      font-weight: 100;
+    }
+    position: relative;
+    a.btn {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+    }
+    .media-body {
+      margin: 1em;
+    }
+  }
+}
+.min-page-height {
+  min-height: 576px;
+}
+footer.footer {
+  /* margin: 1em; */
+  padding: 1em;
+  background: #000;
+  color: #fff;
+  p {
+    margin: 0px;
+    font-weight: 100;
+  }
+}
+.jumbotron {
+  background: #f8f8f8;
+}
+
+
+
