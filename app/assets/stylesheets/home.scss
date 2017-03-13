@@ -23,6 +23,11 @@
     .media-body {
       margin: 1em;
     }
+    &:hover{
+      background: #ddd;
+      cursor: pointer;
+
+    }
   }
 }
 .min-page-height {

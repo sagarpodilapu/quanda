@@ -8,6 +8,7 @@
           <%= @question.body %>
           <div class="answer-btn">
             <a class="btn btn-success btn-sm" href="#" role="button" data-toggle="modal" data-target="#answerModal">Add an Answer</a>
+            <%= render "home/new_answer_form" %>
           </div>
         </div>
       </li>
@@ -42,4 +43,3 @@
     </div>
   </div>
 </div>
-<%= render "home/new_answer_form" %>
